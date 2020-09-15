@@ -1,15 +1,17 @@
 import React from 'react';
 
 import UserItem from './UserItem';
-import Card from '../../shared/components/UIElements/Card';
+import Card from '../../shared/components/UIElements/card';
 import './UsersList.css';
+
+console.log('UserList');
 
 const UsersList = props => {
   if (props.items.length === 0) {
     return (
       <div className="center">
         <Card>
-          <h2>No users found.</h2>
+        <h2>No users found.</h2>
         </Card>
       </div>
     );
@@ -17,6 +19,7 @@ const UsersList = props => {
 
   return (
     <ul className="users-list">
+      {/* {console.log(props.items)}; */}
       {props.items.map(user => (
         <UserItem
           key={user.id}
